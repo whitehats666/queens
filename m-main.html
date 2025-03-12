@@ -4,21 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full-Screen Background Video</title>
+    <title>Queens Island Kayaking</title>
     <style>
-    .a{
-      font-size:30px;
-      padding-top:34px;
-      padding-bottom:34px;
-    }
-    }
         body,
         html {
             margin: 0;
             padding: 0;
             height: 100%;
             overflow-y: scroll;
+            font-family: 'Arial', sans-serif;
+            color: #fff; /* Default text color to white for better contrast on blue backgrounds */
+        }
 
+        body {
+            background: linear-gradient(to bottom, #004d99, #0080ff); /* Dark to light blue gradient background */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Fixed background for a parallax effect if needed */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         .video-bg {
@@ -29,334 +34,280 @@
             height: 100%;
             z-index: -1;
             object-fit: cover;
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
-        }
-
-        .text-size {
-          padding-top:2px;
-            font-size: 14px;
-            text-align:left;
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000; 
-        }
-
-        .head-size {
-            font-size: 20px;
-            
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
+            opacity: 0.6; /* Slightly transparent video to blend with background */
         }
 
         .content {
             position: relative;
             z-index: 1;
-            padding: 5px 5px 5px 5px;
-            color: white;
+            padding: 30px 20px; /* Adjusted padding */
             text-align: center;
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
         }
 
-        .content h1 {
-            font-size: 4em;
-            animation: slideFromLeft 1s ease-out;
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
+        .a {
+            font-size: 32px; /* Adjusted title font size */
+            padding-top: 40px; /* Adjusted padding */
+            padding-bottom: 20px;
+            font-weight: bold; /* Make title bold */
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); /* Refined text shadow */
         }
 
         .container-wrapper {
             display: flex;
-            justify-content: space-between;
-            margin: 5px auto;
+            justify-content: space-around;
+            margin: 20px auto; /* Adjusted margin */
             padding: 0 5%;
             width: 95%;
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
+            flex-wrap: wrap; /* Added flex wrap for responsiveness */
         }
 
         .container {
-            width: 130px;
-            height: 340px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
+            width: calc(30% - 20px); /* Adjusted container width for spacing */
+            min-width: 280px; /* Minimum width for containers */
+            height: auto; /* Auto height for flexible content */
+            background-color: rgba(255, 255, 255, 0.1); /* Frosted glass effect */
+            border-radius: 10px; /* Rounded corners for containers */
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
             text-align: center;
-            padding: 5px;
-            font-size: 14px;
             animation: slideFromLeft 1s ease-out;
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
+            margin-bottom: 20px; /* Spacing between containers */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
         }
 
-        .container p {
-            font-size: 14px;
-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
-        }
-
-        .container h2 {
-            margin-top: 0;
+        .head-size {
+            font-size: 24px; /* Adjusted heading size */
             font-weight: bold;
-            animation: slideFromLeft 1s ease-out;
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
+            margin-bottom: 10px;
+            color: #fff; /* White heading color */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Text shadow for headings */
+        }
+
+        .text-size {
+            font-size: 16px; /* Adjusted text size */
+            text-align: left;
+            line-height: 1.5; /* Improved line height */
+            color: #eee; /* Light grey text color */
         }
 
         .packages-heading {
-            margin-top: 5px;
-            padding-top: 20px;
-            padding-left: 2%;
-            font-size: 27px;
+            margin-top: 30px; /* Adjusted margin */
+            padding-top: 30px;
+            padding-left: 5%;
+            font-size: 36px; /* Adjusted package heading size */
             font-weight: bold;
-            color: white;
             text-align: left;
             animation: slideFromLeft 1s ease-out;
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
+            color: #fff; /* White package heading color */
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); /* Text shadow for package heading */
         }
 
         .package-details {
-            padding-top: 10px;
-            padding-left: 4%;
-            font-size: 14px;
-            color: red;
+            padding-top: 15px;
+            padding-left: 7%;
+            font-size: 18px; /* Adjusted package details size */
             text-align: left;
             animation: slideFromLeft 1s ease-out;
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
+            color: #ffdd59; /* Gold color for package details */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Text shadow for package details */
         }
 
-        .package-detail {
-            white-space: nowrap;
-            font-size:10px;
-            overflow: hidden;
-            width: 100%;
-            animation: slideFromLeft 1s ease-out;
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
+        .package-details p {
+            font-size: 24px; /* Adjusted package detail paragraph size */
+            font-weight: bold;
+            margin-bottom: 8px;
         }
+
 
         .offer-heading {
-            font-size: 25px;
-            padding-top: 10px;
-            padding-left: 2%;
-            color: white;
+            font-size: 30px; /* Adjusted offer heading size */
+            padding-top: 40px;
+            padding-left: 5%;
             text-align: left;
             animation: slideFromLeft 1s ease-out;
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
+            color: #fff; /* White offer heading color */
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); /* Text shadow for offer heading */
         }
 
         .offer-container-wrapper {
             display: flex;
-            justify-content: space-between;
-            margin: 10px auto;
-            padding: 2px;
+            justify-content: space-around;
+            margin: 30px auto; /* Adjusted margin */
+            padding: 20px 2%;
             width: 100%;
             flex-wrap: wrap;
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
         }
 
         .offer-container {
-            width: 50%;
-            height: 300px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            text-align: center;
-            padding: 4px;
+            width: calc(48% - 20px); /* Adjusted offer container width */
+            min-width: 300px; /* Minimum width for offer containers */
+            height: 350px; /* Adjusted height */
+            background-color: rgba(255, 255, 255, 0.15); /* Frosted glass effect for offer containers */
+            border-radius: 10px;
+            padding: 15px;
             font-size: 16px;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            border: 5px solid white;
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
             box-sizing: border-box;
             overflow: hidden;
             word-wrap: break-word;
             text-overflow: ellipsis;
             animation: slideFromLeft 1s ease-out;
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
+            margin-bottom: 20px; /* Spacing between offer containers */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
         }
 
         .offer-container h1 {
-            font-size: 20px;
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
+            font-size: 22px; /* Adjusted offer container heading size */
+            color: #fff; /* White color for offer container headings */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Text shadow for offer container headings */
         }
 
         .offer-container h2 {
-            font-size: 20px;
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
+            font-size: 20px; /* Adjusted offer container subheading size */
+            color: #eee; /* Light grey for offer container subheadings */
         }
 
         .contwo {
             font-weight: bold;
-            font-size: 22px;
-            color: black;
-            animation: slideFromLeft 1s ease-out;
-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+            font-size: 26px; /* Adjusted contwo font size */
+            color: #fff; /* White color for contwo */
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4); /* Text shadow for contwo */
         }
 
         .contwot {
-            font-size: 19px;
-            color: white;
-            animation: slideFromLeft 1s ease-out;
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
+            font-size: 20px; /* Adjusted contwot font size */
+            color: #eee; /* Light grey for contwot */
         }
 
         .why-choose-us {
-            font-size: 25px;
-            padding-top: 10px;
-padding-bottom:10px;
-            padding-left: 3%;
-            color: white;
+            font-size: 32px; /* Adjusted why choose us heading size */
+            padding-top: 40px;
+            padding-bottom: 20px;
+            padding-left: 5%;
             text-align: left;
-            margin-top: 10px;
+            margin-top: 30px; /* Adjusted margin */
             animation: slideFromLeft 1s ease-out;
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
+            color: #fff; /* White why choose us heading color */
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); /* Text shadow for why choose us heading */
         }
 
         .why-choose-us-points {
-            font-size: 22px;
-            padding-left: 2%;
-            color: white;
+            font-size: 18px; /* Adjusted why choose us points size */
+            padding-left: 7%;
             text-align: left;
             animation: slideFromLeft 1s ease-out;
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
-
+            color: #eee; /* Light grey for why choose us points */
+            line-height: 1.6;
+            list-style-type: disc; /* Added disc bullets for list */
+            margin-left: 20px; /* Indentation for list */
         }
 
+        .why-choose-us-points h5 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+
         .location {
-            padding: 10px 5%;
-            font-size: 28px;
-            padding-bottom: 14px;
-            color: white;
+            padding: 30px 5%; /* Adjusted location padding */
+            font-size: 30px; /* Adjusted location heading size */
+            padding-bottom: 20px;
             text-align: left;
             animation: slideFromLeft 1s ease-out;
+            color: #fff; /* White location heading color */
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); /* Text shadow for location heading */
         }
 
         .google-map-wrapper {
-            padding: 10px 5%;
+            padding: 0 5%;
             text-align: center;
+            margin-bottom: 30px; /* Added margin at the bottom */
+        }
+
+        .google-map-wrapper iframe {
+            border-radius: 10px; /* Rounded corners for map */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for map */
         }
 
         footer {
-          padding-top: 20px;
-            background-color: rgba(0, 0, 0, 0.8);
+            padding-top: 30px;
+            background-color: rgba(0, 0, 0, 0.7); /* Darker footer background */
             color: white;
-            padding: 20px 0;
-            text-align: center;
-            font-size: 18px;
+            padding: 30px 0; /* Adjusted footer padding */
+            text-align: left; /* Left align footer text */
+            font-size: 16px;
             width: 100%;
             box-sizing: border-box;
             position: relative;
             bottom: 0;
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
+            margin-top: auto; /* Push footer to bottom */
         }
 
         .footer-content {
             display: flex;
             flex-wrap: wrap;
-            justify-content: left;
-            padding-left:10PX;
-            gap: 1px;
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
+            justify-content: space-around; /* Space around footer content */
+            padding-left: 20px; /* Adjusted padding */
+            padding-right: 20px;
+            gap: 20px;
+            max-width: 1200px; /* Max width for footer content */
+            margin: 0 auto; /* Center footer content */
         }
 
         .contact-info,
         .location-info {
-          font-size:25px;
-            width: 100%;
-            text-align:left;
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
+            font-size: 18px; /* Adjusted footer section font size */
+            width: 45%;
+            text-align: left; /* Left align text in footer sections */
         }
 
-        footer h3 {
-            font-size: 25px;
-            margin-bottom: 1px;
- text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;
+        footer h2 {
+            font-size: 20px; /* Adjusted footer heading size */
+            margin-bottom: 10px;
+            color: #fff; /* White footer heading color */
+            border-bottom: 1px solid #fff; /* Subtle border for footer headings */
+            padding-bottom: 5px;
+            display: inline-block;
         }
 
         footer p {
-            font-size: 12px;
+            font-size: 14px; /* Adjusted footer paragraph size */
+            color: #ddd; /* Lighter text for footer paragraphs */
+            margin: 8px 0;
         }
+        footer a {
+            color: #ffcc80; /* Link color in footer (light orange) */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a h4 {
+            color: #ffdd59; /* Gold color for the "happy customers" link */
+            text-align: left; /* Left align the link */
+            margin-top: 25px;
+            font-size: 24px; /* Adjusted link font size */
+            transition: color 0.3s ease;
+            padding-left: 5%; /* Align with other text content */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+        }
+
+        a h4:hover {
+            color: #e6af4b; /* Darker gold on hover */
+        }
+
 
         @keyframes slideFromLeft {
             0% {
@@ -370,11 +321,50 @@ padding-bottom:10px;
             }
         }
 
-        @media (min-width: 768px) {
+        @media (max-width: 768px) {
+            .a {
+                font-size: 28px; /* Adjusted for smaller screens */
+                padding-top: 30px;
+                padding-bottom: 10px;
+            }
+
+            .container-wrapper,
+            .offer-container-wrapper,
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container,
+            .offer-container,
             .contact-info,
             .location-info {
-                width: 45%;
+                width: 90%;
             }
+             .offer-container {
+                height: auto; /* Auto height for offer containers on smaller screens */
+            }
+
+
+            .packages-heading,
+            .offer-heading,
+            .why-choose-us,
+            .location {
+                font-size: 28px; /* Adjusted heading sizes for smaller screens */
+                text-align: center; /* Center align headings on smaller screens */
+                padding-left: 0; /* Remove left padding for centered alignment */
+            }
+            .package-details,
+            .why-choose-us-points,
+            .location,
+            a h4 {
+                padding-left: 10%; /* Re-introduce some left padding for text content */
+                text-align: left; /* Revert text alignment for text content */
+            }
+             a h4 {
+                 font-size: 22px; /* Adjust link font size for smaller screens */
+                 text-align: center; /* Center align link on smaller screens */
+             }
         }
     </style>
 </head>
@@ -393,7 +383,7 @@ padding-bottom:10px;
             </div>
             <div class="container">
                 <h4 class="head-size">Unique Experience</h4>
-                <h2 class="text-size">At Queens Island Kayaking, we offer an unparalleled experience. Our island is an oasis of peace and beauty. Paddle through tranquil waters and explore the ecosystem.</h4>
+                <h2 class="text-size">At Queens Island Kayaking, we offer an unparalleled experience. Our island is an oasis of peace and beauty. Paddle through tranquil waters and explore the ecosystem.</h2>
             </div>
             <div class="container">
                 <h4 class="head-size">Our Journey</h4>
@@ -402,11 +392,11 @@ padding-bottom:10px;
         </div>
 
         <h4 class="packages-heading">Packages and Pricing</h4>
-        <div class="ackage-details">
-            <p style="color:white; text-align:left; font-weight:bold; font-size:22; > Minimum Charge: ₹1200</p>
-            <p   style="color:white; text-align:left; font-weight:bold; font-size:22;" >Group of 3 or More: ₹400 per head</p>
-            <p style="color:white; text-align:left; font-weight:bold; font-size:22;" >Includes: Kayaking, boating, and tea snacks</p>
-            <p  style="color:white;text-align:left;  font-weight:bold; font-size:22;" >Additional Package: With breakfast for an extra ₹100 per person</p>
+        <div class="package-details">
+            <p style="color:white; text-align:left; font-weight:bold; font-size:22px;"> Minimum Charge: ₹1200</p>
+            <p style="color:white; text-align:left; font-weight:bold; font-size:22px;">Group of 3 or More: ₹400 per head</p>
+            <p style="color:white; text-align:left; font-weight:bold; font-size:22px;">Includes: Kayaking, boating, and tea snacks</p>
+            <p style="color:white;text-align:left; font-weight:bold; font-size:22px;">Additional Package: With breakfast for an extra ₹100 per person</p>
         </div>
 
         <h5 class="offer-heading">We Offer</h5>
@@ -416,34 +406,36 @@ padding-bottom:10px;
                 <p class="contwo">Sunrise Slot</p>
                 <br><br>
                 <p class="contwot">Starts at 6 AM</p>
-                <p style="font-size:10px;" >last for 2 to 3 hours</p>
+                <p style="font-size:16px;">Lasts for 2 to 3 hours</p>
             </div>
             <div class="offer-container" style="background-image: url('suns.jpeg');">
                 <br>
                 <p class="contwo">Sunset Slot</p>
                 <br><br>
                 <p class="contwot">Starts at 4 PM.</p>
-                <p style="font-size:10px;">last for 2 to 3 hours</p>
+                <p style="font-size:16px;">Lasts for 2 to 3 hours</p>
             </div>
         </div>
 
         <div class="why-choose-us">Why Choose Us</div>
         <div class="why-choose-us-points">
-            <h5 style="color:white; font-weight:bold; font-size:22;" >1) Affordable Price: We provide quality service at an affordable price.</h5>
-            <h5 style="color:white; font-weight:bold; font-size:22;" >2) Private Island: Exclusive access to our 25-acre paradise.</h5>
-            <h5 style="color:white; font-weight:bold; font-size:22;"  >3) Lush Mangroves: Explore the serene mangrove ecosystems that thrive on our island.</h5>
-            <h5 style="color:white; font-weight:bold; font-size:22;"  >4) Safety and Standards: We give priority to safety and follow high standards with IRS certified imported kayaks, essential safety gear, licensed operations, and comprehensive insurance for your peace of mind.</h5>
-         <h5 style="color:white; font-weight:bold; font-size:22;"  >5)Free parking facilities available</h5>
-</div>
-<BR>
-<a href="s.html"><h4 style="color:blue; text-align:left; ">Click here to see our happy customers</h4></a>
-<BR>
+            <h5>Affordable Price: We provide quality service at an affordable price.</h5>
+            <h5>Private Island: Exclusive access to our 25-acre paradise.</h5>
+            <h5>Lush Mangroves: Explore the serene mangrove ecosystems that thrive on our island.</h5>
+            <h5>Safety and Standards: We give priority to safety and follow high standards with IRS certified imported kayaks, essential safety gear, licensed operations, and comprehensive insurance for your peace of mind.</h5>
+            <h5>Free parking facilities available</h5>
+        </div>
+        <BR>
+        <a href="s.html">
+            <h4 style="color:blue; text-align:left; ">Click here to see our happy customers</h4>
+        </a>
+        <BR>
         <div class="location">Location</div>
         <div class="google-map-wrapper">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3928.8876526726685!2d76.268396!3d10.026129!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b081278351f14d1%3A0xa79603f8753d2374!2sManimoopan%20Rd%2C%20Vaduthala%2C%20Ernakulam%2C%20Kochi%2C%20Kerala%20682023!5e0!3m2!1sen!2sin!4v1739883987689!5m2!1sen!2sin"
-                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-       <br>
-       <br>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3928.8876526726685!2d76.268396!3d10.026129!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b081278351f14d1%3A0xa79603f8753d2374!2sManimoopan%20Rd%2C%20Vaduthala%2C%20Ernakulam%2C%20Kochi%2C%20Kerala%20682023!5e0!3m2!1sen!2sin!4v1739883987689!5m2!1sen!2sin" width="100%" height="450" style="border:0;"
+                allowfullscreen="" loading="lazy"></iframe>
+            <br>
+            <br>
         </div>
     </div>
 
@@ -451,14 +443,13 @@ padding-bottom:10px;
         <div class="footer-content">
             <div class="contact-info">
                 <h2>Contact Us</h2>
-                <p>Location</p>
-                 <p>Queens Island,Manimoopan Rd
-Vaduthala, Ernakulam, Kochi, Kerala 682023</p>
+                <p>Queens Island,Manimoopan Rd</p>
+                <p>Vaduthala, Ernakulam, Kochi, Kerala 682023</p>
                 <p>Phone: 6238301289, 9746947542</p>
-                <p>Email: queensislandkayaking@gmail.com</p>
-                <p>Instagram: @queensisland_kayaking</p>
+                <p>Email: <a href="mailto:queensislandkayaking@gmail.com">queensislandkayaking@gmail.com</a></p>
+                <p>Instagram: <a href="https://www.instagram.com/queensisland_kayaking/" target="_blank">@queensisland_kayaking</a></p>
             </div>
-            
+
         </div>
     </footer>
 </body>
