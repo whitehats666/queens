@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect Based on Screen Size</title>
+    <script>
+        // Function to detect screen size and redirect
+        function checkScreenSize() {
+            // Check if the screen width is less than or equal to 768px (common breakpoint for mobile)
+            if (window.innerWidth >= 768) {
+                window.location.href = 'd-start.html';  // Redirect to mobile version
+            } else {
+                window.location.href = 'm-start.html';  // Redirect to desktop version
+            }
+        }
+
+        // Call the function when the page loads
+        window.onload = checkScreenSize;
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>

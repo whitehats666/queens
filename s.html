@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-Slidable Photo Album with YouTube Video</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow: auto; /* Allow scrolling */
+        }
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: blur(50%);
+        }
+        .album-container, .video-container, .reviews-container, h1, h2 {
+            position: relative;
+            z-index: 1;
+        }
+        .album-container {
+            width: 80%;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        .album {
+            display: flex;
+            transition: transform 0.8s ease-in-out;
+        }
+        .photo {
+            min-width: 400px;
+            height: 250px;
+            border: 2px solid black;
+            margin: 10px;
+            background-size: cover;
+            background-position: center;
+            display: inline-block;
+        }
+        .video-container {
+            width: 80%;
+            padding: 20px;
+            border: 2px solid black;
+            background-color: #f9f9f9;
+        }
+        .video-container iframe {
+            width: 100%;
+            height: 450px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .reviews-container {
+            width: 80%;
+            padding: 20px;
+            border: 2px solid black;
+            background-color: #f9f9f9;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .review {
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1 1 calc(25% - 20px);
+            max-width: calc(25% - 20px);
+        }
+        .review img {
+            width: 100%;
+            height: auto;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <video class="background-video" autoplay muted loop>
+        <source src="w.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <h1>OUR HAPPY CUSTOMERS</h1>
+
+    <div class="album-container">
+        <div class="album" id="album">
+            <!-- Photos -->
+            <div class="photo" id="photo1" style="background-image: url('1.jpeg');"></div>
+            <div class="photo" id="photo2" style="background-image: url('2.jpeg');"></div>
+            <div class="photo" id="photo3" style="background-image: url('3.jpeg');"></div>
+            <div class="photo" id="photo4" style="background-image: url('4.jpeg');"></div>
+            <div class="photo" id="photo5" style="background-image: url('5.jpeg');"></div>
+            <div class="photo" id="photo6" style="background-image: url('6.jpg');"></div>
+            <div class="photo" id="photo7" style="background-image: url('8.jpg');"></div>
+            <div class="photo" id="photo8" style="background-image: url('9.jpg');"></div>
+            <div class="photo" id="photo9" style="background-image: url('10.jpeg');"></div>
+            <div class="photo" id="photo10" style="background-image: url('11.jpeg');"></div>
+        </div>
+    </div>
+
+    <h2>ABOUT US</h2>
+
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/ALcqZB0PTeA?si=_BlxRWFP4x6QpchE?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
+    <h1>OUR REVIEWS</h1>
+
+    <div class="reviews-container">
+        <div class="review">
+            <img src="r1.jpeg" alt="Google Review 1">
+        </div>
+        <div class="review">
+            <img src="r2.jpeg" alt="Google Review 2">
+        </div>
+        <div class="review">
+            <img src="r3.jpeg" alt="Google Review 3">
+        </div>
+        <div class="review">
+            <img src="r4.jpeg" alt="Google Review 4">
+        </div>
+        <div class="review">
+            <img src="r5.jpeg" alt="Google Review 5">
+        </div>
+        <div class="review">
+            <img src="r6.jpeg" alt="Google Review 6">
+        </div>
+        <div class="review">
+            <img src="r7.jpeg" alt="Google Review 4">
+        </div>
+        <div class="review">
+            <img src="r8.jpeg" alt="Google Review 5">
+        </div>
+    </div>
+
+    <script>
+        const album = document.getElementById('album');
+        const totalPhotos = album.children.length;
+        let currentIndex = 0;
+
+        function autoSlide() {
+            currentIndex = (currentIndex + 1) % totalPhotos;
+            album.style.transform = `translateX(-${currentIndex * 420}px)`;
+        }
+
+        setInterval(autoSlide, 1000);
+    </script>
+</body>
+</html>

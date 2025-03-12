@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Screen Background Video</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-y: scroll;
+
+        }
+
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+            filter: blur(3px);
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .text-size {
+            font-size: 20px;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000; 
+        }
+
+        .head-size {
+            font-size: 35px;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 80px 20px 20px 20px;
+            color: white;
+            text-align: center;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .content h1 {
+            font-size: 4em;
+            animation: slideFromLeft 1s ease-out;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .container-wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin: 120px auto;
+            padding: 0 5%;
+            width: 80%;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .container {
+            width: 225px;
+            height: 400px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            animation: slideFromLeft 1s ease-out;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .container p {
+            font-size: 14px;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+        }
+
+        .container h2 {
+            margin-top: 0;
+            font-weight: bold;
+            animation: slideFromLeft 1s ease-out;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .packages-heading {
+            margin-top: 20px;
+            padding-left: 10%;
+            font-size: 80px;
+            font-weight: bold;
+            color: white;
+            text-align: left;
+            animation: slideFromLeft 1s ease-out;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .package-details {
+            padding-top: 20px;
+            padding-left: 10%;
+            font-size: 25px;
+            color: white;
+            text-align: left;
+            animation: slideFromLeft 1s ease-out;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .package-detail {
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
+            animation: slideFromLeft 1s ease-out;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .offer-heading {
+            font-size: 40px;
+            padding-top: 50px;
+            padding-left: 10%;
+            color: white;
+            text-align: left;
+            animation: slideFromLeft 1s ease-out;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .offer-container-wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px auto;
+            padding: 80px 10%;
+            width: 80%;
+            flex-wrap: wrap;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .offer-container {
+            width: 40%;
+            height: 500px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 5px solid white;
+            box-sizing: border-box;
+            overflow: hidden;
+            word-wrap: break-word;
+            text-overflow: ellipsis;
+            animation: slideFromLeft 1s ease-out;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .offer-container h1 {
+            font-size: 20px;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .offer-container h2 {
+            font-size: 20px;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .contwo {
+            font-weight: bold;
+            font-size: 38px;
+            color: black;
+            animation: slideFromLeft 1s ease-out;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+        }
+
+        .contwot {
+            font-size: 25px;
+            color: white;
+            animation: slideFromLeft 1s ease-out;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .why-choose-us {
+            font-size: 80px;
+            padding-top: 50px;
+padding-bottom:50px;
+            padding-left: 10%;
+            color: white;
+            text-align: left;
+            margin-top: 20px;
+            animation: slideFromLeft 1s ease-out;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .why-choose-us-points {
+            font-size: 20px;
+            padding-left: 10%;
+            color: white;
+            text-align: left;
+            animation: slideFromLeft 1s ease-out;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+
+        }
+
+        .location {
+            padding: 40px 10%;
+            font-size: 40px;
+            color: white;
+            text-align: left;
+            animation: slideFromLeft 1s ease-out;
+        }
+
+        .google-map-wrapper {
+            padding: 30px 10%;
+            text-align: center;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 18px;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+            bottom: 0;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .contact-info,
+        .location-info {
+            width: 100%;
+            text-align: center;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        footer h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        footer p {
+            font-size: 16px;
+        }
+
+        @keyframes slideFromLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .contact-info,
+            .location-info {
+                width: 45%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <video class="video-bg" autoplay muted loop>
+        <source src="W.MP4" type="video/mp4"> Your browser does not support the video tag.
+    </video>
+
+    <div class="content">
+        <h1>EXPERIENCE THE ULTIMATE FUN</h1>
+        <div class="container-wrapper">
+            <div class="container">
+                <h2 class="head-size">About Us</h2>
+                <h2 class="text-size">Welcome to Queens Island Kayaking, your gateway to serenity and adventure. Enjoy a unique kayaking experience on our private island amidst lush shrimp farms, mangroves, and captivating migratory birds.</h2>
+            </div>
+            <div class="container">
+                <h2 class="head-size">Unique Experience</h2>
+                <h2 class="text-size">At Queens Island Kayaking, we offer an unparalleled experience. Our island is an oasis of peace and beauty. Paddle through tranquil waters and explore the ecosystem.</h2>
+            </div>
+            <div class="container">
+                <h2 class="head-size">Our Journey</h2>
+                <h2 class="text-size">Begin your adventure with a scenic boat ride to our island. Enjoy a 15-20 minute ride, immersing yourself in nature. Arrive in a primitive paradise, far from everyday life.</h2>
+            </div>
+        </div>
+
+        <h2 class="packages-heading">Packages and Pricing</h2>
+        <div class="package-details">
+            <p style="color:white; font-weight:bold; font-size:56;">Minimum Charge: ₹1200</p>
+            <p   style="color:white; font-weight:bold; font-size:56;" >Group of 3 or More: ₹400 per head</p>
+            <p style="color:white; font-weight:bold; font-size:56;" >Includes: Kayaking, boating, and tea snacks</p>
+            <p  style="color:white; font-weight:bold; font-size:56;" >Additional Package: With breakfast for an extra ₹100 per person</p>
+        </div>
+
+        <h1 class="offer-heading">We Offer</h1>
+        <div class="offer-container-wrapper">
+            <div class="offer-container" style="background-image: url('sunr.jpeg');">
+                <br><br>
+                <p class="contwo">Sunrise Slot</p>
+                <br><br>
+                <p class="contwot">Starts at 6 AM</p>
+                <h3>last for 2 to 3 hours</h3>
+            </div>
+            <div class="offer-container" style="background-image: url('suns.jpeg');">
+                <br><br>
+                <p class="contwo">Sunset Slot</p>
+                <br><br>
+                <p class="contwot">Starts at 4 PM.</p>
+                <h3>last for 2 to 3 hours</h3>
+            </div>
+        </div>
+
+        <div class="why-choose-us">Why Choose Us</div>
+        <div class="why-choose-us-points">
+            <h2 style="color:white; font-weight:bold; font-size:25;" >1) Affordable Price: We provide quality service at an affordable price.</h2>
+            <h2 style="color:white; font-weight:bold; font-size:40;" >2) Private Island: Exclusive access to our 25-acre paradise.</h2>
+            <h2 style="color:white; font-weight:bold; font-size:25;"  >3) Lush Mangroves: Explore the serene mangrove ecosystems that thrive on our island.</h2>
+            <h2 style="color:white; font-weight:bold; font-size:25;"  >4) Safety and Standards: We give priority to safety and follow high standards with IRS certified imported kayaks, essential safety gear, licensed operations, and comprehensive insurance for your peace of mind.</h2>
+       <h2 style="color:white; font-weight:bold; font-size:25;"  >5)Free parking facilities available</h2>
+ </div>
+<br>
+<br>
+<a href="s.html"><h1 style="color:blue">Click here to see our happy customers</h1></a>
+
+        <div class="location">Location</div>
+        <div class="google-map-wrapper">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.8876502479998!2d76.26839609999999!3d10.026129200000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b081278351f14d1%3A0xa79603f8753d2374!2sManimoopan%20Rd%2C%20Vaduthala%2C%20Ernakulam%2C%20Kochi%2C%20Kerala%20682023!5e0!3m2!1sen!2sin!4v1739880659872!5m2!1sen!2sin"
+                width="90%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>Phone: 6238301289, 9746947542</p>
+                <p>Email: queensislandkayaking@gmail.com</p>
+                <p>Instagram: @queensisland_kayaking</p>
+            </div>
+            <div class="location-info">
+                <h3>Location</h3>
+                <p>Queens Island, Manimoopan Rd
+Vaduthala, Ernakulam, Kochi, Kerala 682023</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

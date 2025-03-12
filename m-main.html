@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Screen Background Video</title>
+    <style>
+    .a{
+      font-size:30px;
+      padding-top:34px;
+      padding-bottom:34px;
+    }
+    }
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-y: scroll;
+
+        }
+
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .text-size {
+          padding-top:2px;
+            font-size: 14px;
+            text-align:left;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000; 
+        }
+
+        .head-size {
+            font-size: 20px;
+            
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 5px 5px 5px 5px;
+            color: white;
+            text-align: center;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .content h1 {
+            font-size: 4em;
+            animation: slideFromLeft 1s ease-out;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .container-wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px auto;
+            padding: 0 5%;
+            width: 95%;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .container {
+            width: 130px;
+            height: 340px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            padding: 5px;
+            font-size: 14px;
+            animation: slideFromLeft 1s ease-out;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .container p {
+            font-size: 14px;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+        }
+
+        .container h2 {
+            margin-top: 0;
+            font-weight: bold;
+            animation: slideFromLeft 1s ease-out;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .packages-heading {
+            margin-top: 5px;
+            padding-top: 20px;
+            padding-left: 2%;
+            font-size: 27px;
+            font-weight: bold;
+            color: white;
+            text-align: left;
+            animation: slideFromLeft 1s ease-out;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .package-details {
+            padding-top: 10px;
+            padding-left: 4%;
+            font-size: 14px;
+            color: red;
+            text-align: left;
+            animation: slideFromLeft 1s ease-out;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .package-detail {
+            white-space: nowrap;
+            font-size:10px;
+            overflow: hidden;
+            width: 100%;
+            animation: slideFromLeft 1s ease-out;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .offer-heading {
+            font-size: 25px;
+            padding-top: 10px;
+            padding-left: 2%;
+            color: white;
+            text-align: left;
+            animation: slideFromLeft 1s ease-out;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .offer-container-wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px auto;
+            padding: 2px;
+            width: 100%;
+            flex-wrap: wrap;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .offer-container {
+            width: 50%;
+            height: 300px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            padding: 4px;
+            font-size: 16px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 5px solid white;
+            box-sizing: border-box;
+            overflow: hidden;
+            word-wrap: break-word;
+            text-overflow: ellipsis;
+            animation: slideFromLeft 1s ease-out;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .offer-container h1 {
+            font-size: 20px;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .offer-container h2 {
+            font-size: 20px;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .contwo {
+            font-weight: bold;
+            font-size: 22px;
+            color: black;
+            animation: slideFromLeft 1s ease-out;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+        }
+
+        .contwot {
+            font-size: 19px;
+            color: white;
+            animation: slideFromLeft 1s ease-out;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .why-choose-us {
+            font-size: 25px;
+            padding-top: 10px;
+padding-bottom:10px;
+            padding-left: 3%;
+            color: white;
+            text-align: left;
+            margin-top: 10px;
+            animation: slideFromLeft 1s ease-out;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .why-choose-us-points {
+            font-size: 22px;
+            padding-left: 2%;
+            color: white;
+            text-align: left;
+            animation: slideFromLeft 1s ease-out;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+
+        }
+
+        .location {
+            padding: 10px 5%;
+            font-size: 28px;
+            padding-bottom: 14px;
+            color: white;
+            text-align: left;
+            animation: slideFromLeft 1s ease-out;
+        }
+
+        .google-map-wrapper {
+            padding: 10px 5%;
+            text-align: center;
+        }
+
+        footer {
+          padding-top: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 18px;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+            bottom: 0;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: left;
+            padding-left:10PX;
+            gap: 1px;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .contact-info,
+        .location-info {
+          font-size:25px;
+            width: 100%;
+            text-align:left;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        footer h3 {
+            font-size: 25px;
+            margin-bottom: 1px;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        footer p {
+            font-size: 12px;
+        }
+
+        @keyframes slideFromLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .contact-info,
+            .location-info {
+                width: 45%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <video class="video-bg" autoplay muted loop>
+        <source src="mw.MP4" type="video/mp4"> Your browser does not support the video tag.
+    </video>
+
+    <div class="content">
+        <h4 class="a">EXPERIENCE THE ULTIMATE FUN</h4>
+        <div class="container-wrapper">
+            <div class="container">
+                <h4 class="head-size">About Us in detail</h4>
+                <h2 class="text-size">Welcome to Queens Island Kayaking, your gateway to serenity and adventure. Enjoy a unique kayaking experience and have fun.</h2>
+            </div>
+            <div class="container">
+                <h4 class="head-size">Unique Experience</h4>
+                <h2 class="text-size">At Queens Island Kayaking, we offer an unparalleled experience. Our island is an oasis of peace and beauty. Paddle through tranquil waters and explore the ecosystem.</h4>
+            </div>
+            <div class="container">
+                <h4 class="head-size">Our Journey</h4>
+                <h4 class="text-size">Begin your adventure ,enjoy a 15-20 minute ride, immersing yourself in nature. Arrive in a primitive paradise, far from everyday life.</h4>
+            </div>
+        </div>
+
+        <h4 class="packages-heading">Packages and Pricing</h4>
+        <div class="ackage-details">
+            <p style="color:white; text-align:left; font-weight:bold; font-size:22; > Minimum Charge: ₹1200</p>
+            <p   style="color:white; text-align:left; font-weight:bold; font-size:22;" >Group of 3 or More: ₹400 per head</p>
+            <p style="color:white; text-align:left; font-weight:bold; font-size:22;" >Includes: Kayaking, boating, and tea snacks</p>
+            <p  style="color:white;text-align:left;  font-weight:bold; font-size:22;" >Additional Package: With breakfast for an extra ₹100 per person</p>
+        </div>
+
+        <h5 class="offer-heading">We Offer</h5>
+        <div class="offer-container-wrapper">
+            <div class="offer-container" style="background-image: url('sunr.jpeg');">
+                <br>
+                <p class="contwo">Sunrise Slot</p>
+                <br><br>
+                <p class="contwot">Starts at 6 AM</p>
+                <p style="font-size:10px;" >last for 2 to 3 hours</p>
+            </div>
+            <div class="offer-container" style="background-image: url('suns.jpeg');">
+                <br>
+                <p class="contwo">Sunset Slot</p>
+                <br><br>
+                <p class="contwot">Starts at 4 PM.</p>
+                <p style="font-size:10px;">last for 2 to 3 hours</p>
+            </div>
+        </div>
+
+        <div class="why-choose-us">Why Choose Us</div>
+        <div class="why-choose-us-points">
+            <h5 style="color:white; font-weight:bold; font-size:22;" >1) Affordable Price: We provide quality service at an affordable price.</h5>
+            <h5 style="color:white; font-weight:bold; font-size:22;" >2) Private Island: Exclusive access to our 25-acre paradise.</h5>
+            <h5 style="color:white; font-weight:bold; font-size:22;"  >3) Lush Mangroves: Explore the serene mangrove ecosystems that thrive on our island.</h5>
+            <h5 style="color:white; font-weight:bold; font-size:22;"  >4) Safety and Standards: We give priority to safety and follow high standards with IRS certified imported kayaks, essential safety gear, licensed operations, and comprehensive insurance for your peace of mind.</h5>
+         <h5 style="color:white; font-weight:bold; font-size:22;"  >5)Free parking facilities available</h5>
+</div>
+<BR>
+<a href="s.html"><h4 style="color:blue; text-align:left; ">Click here to see our happy customers</h4></a>
+<BR>
+        <div class="location">Location</div>
+        <div class="google-map-wrapper">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3928.8876526726685!2d76.268396!3d10.026129!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b081278351f14d1%3A0xa79603f8753d2374!2sManimoopan%20Rd%2C%20Vaduthala%2C%20Ernakulam%2C%20Kochi%2C%20Kerala%20682023!5e0!3m2!1sen!2sin!4v1739883987689!5m2!1sen!2sin"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+       <br>
+       <br>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <p>Location</p>
+                 <p>Queens Island,Manimoopan Rd
+Vaduthala, Ernakulam, Kochi, Kerala 682023</p>
+                <p>Phone: 6238301289, 9746947542</p>
+                <p>Email: queensislandkayaking@gmail.com</p>
+                <p>Instagram: @queensisland_kayaking</p>
+            </div>
+            
+        </div>
+    </footer>
+</body>
+
+</html>

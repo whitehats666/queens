@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        .logo-container, .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .logo img {
+            width: 250px;
+            height: 250px;
+            animation: fadeIn 3s ease-out;
+        }
+
+        .video-container {
+            display: none;
+            background: black;
+        }
+
+        .video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(8px);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: white;
+            font-size: 2rem;
+            animation: fadeInText 2s ease-out;
+            text-align: center;
+ text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+
+        .text, .clickable-text {
+            opacity: 0;
+            animation: revealText 2s forwards;
+        }
+
+        .clickable-text {
+            padding-top: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .clickable-text:hover {
+            color: #ffa;
+        }
+
+        @keyframes revealText {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="logo">
+            <img src="logo.jpeg" alt="Logo">
+        </div>
+    </div>
+
+    <div class="video-container">
+        <video class="video" src="wf.mp4" autoplay muted loop></video>
+        <div class="text-container">
+            <div class="text" style="font-size:90px">Queens Island Kayaking</div>
+            <div class="clickable-text" onclick="window.location.href='d-main.html'">Click here to explore</div>
+        </div>
+    </div>
+
+    <script>
+        setTimeout(function() {
+            document.querySelector('.logo-container').style.display = 'none';
+            document.querySelector('.video-container').style.display = 'flex';
+        }, 1000); // 3 seconds for logo + 2 seconds blank = 5 seconds total
+    </script>
+</body>
+</html>
